@@ -16,5 +16,18 @@ namespace ZooTycoon
         {
             InitializeComponent();
         }
+
+        private void Acceuil_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCommencer_Click(object sender, EventArgs e)
+        {
+            Zoo form_zoo = new Zoo();
+            this.Hide();
+            form_zoo.ShowDialog();
+            this.Close();
+        }
     }
 }
