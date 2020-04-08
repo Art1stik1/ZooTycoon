@@ -1,6 +1,6 @@
 ﻿namespace ZooTycoon
 {
-    partial class Acceuil
+    partial class Accueil
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acceuil));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCommencer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -55,15 +55,16 @@
             this.btnCommencer.TabIndex = 0;
             this.btnCommencer.Text = "Commencer";
             this.btnCommencer.UseVisualStyleBackColor = false;
-            this.btnCommencer.Click += new System.EventHandler(this.btnCommencer_Click);
+            this.btnCommencer.Click += new System.EventHandler(this.BtnCommencer_Click);
             // 
-            // Acceuil
+            // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 413);
             this.Controls.Add(this.panel1);
-            this.Name = "Acceuil";
+            this.Name = "Accueil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceuil";
             this.Load += new System.EventHandler(this.Acceuil_Load);
             this.panel1.ResumeLayout(false);

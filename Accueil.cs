@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZooTycoon
 {
-    public partial class Acceuil : Form
+    public partial class Accueil : Form
     {
-        public Acceuil()
+        public Accueil()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace ZooTycoon
 
         }
 
-        private void btnCommencer_Click(object sender, EventArgs e)
+        private void BtnCommencer_Click(object sender, EventArgs e)
         {
             Zoo form_zoo = new Zoo();
             this.Hide();
