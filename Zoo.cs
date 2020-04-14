@@ -16,5 +16,12 @@ namespace ZooTycoon
         {
             InitializeComponent();
         }
+
+
+        private void ActualisationArgent()
+        {
+
+
+        }
     }
 }
