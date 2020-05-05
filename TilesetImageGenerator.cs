@@ -34,6 +34,22 @@ namespace TestTilesetZoo
         public static int BATIMENT_PORTE_BAS = 15;
         public static int BATIMENT_MUR_DROIT = 16;
 
+        public static int COLONNE_HAUT = 17;
+        public static int COLONNE_CENTRE = 18;
+        public static int COLONNE_BAS = 19;
+
+        public static int GRASS = 20;
+
+        public static int ENCLOS_SUPERIEUR_GAUCHE = 21;
+        public static int ENCLOS_SUPERIEUR = 22;
+        public static int ENCLOS_SUPERIEUR_DROIT = 23;
+        public static int ENCLOS_DROIT = 24;
+        public static int ENCLOS_INFERIEUR_DROIT = 25;
+        public static int ENNCLOS_INFERIEUR = 26;
+        public static int ENCLOS_INFERIEUR_GAUCHE = 27;
+        public static int ENCLOS_GAUCHE = 28;
+        public static int ENCLOS_CENTRE = 29;
+
 
         private static List<TileCoord> listeCoord = new List<TileCoord>();
         private static List<Bitmap> listeBitmap = new List<Bitmap>();
@@ -62,6 +78,23 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 8, Colonne = 14 }); // BATIMENT_PORTE_BAS
             listeCoord.Add(new TileCoord() { Ligne = 7, Colonne = 15 }); // BATIMENT_MUR_DROIT
 
+            listeCoord.Add(new TileCoord() { Ligne = 0, Colonne = 22 }); // COLONNE_HAUT
+            listeCoord.Add(new TileCoord() { Ligne = 1, Colonne = 22 }); // COLONNE_CENTRE
+            listeCoord.Add(new TileCoord() { Ligne = 2, Colonne = 22 }); // COLONNE_BAS
+
+            listeCoord.Add(new TileCoord() { Ligne = 8, Colonne = 0 }); // GRASS
+
+
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 3 }); // ENCLOS_SUPERIEUR_GAUCHE
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 4 }); // ENCLOS_SUPERIEUR
+            listeCoord.Add(new TileCoord() { Ligne = 13, Colonne = 5 }); // CHEMIN_SUPERIEUR_DROIT
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 5 }); // ENCLOS_DROIT
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 5 }); // ENCLOS_INFERIEUR_DROIT
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 4 }); // ENNCLOS_INFERIEUR
+            listeCoord.Add(new TileCoord() { Ligne = 15, Colonne = 3 }); // ENCLOS_INFERIEUR_GAUCHE
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // ENCLOS_GAUCHE
+            listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // ENCLOS_CENTRE
+
 
 
             listeBitmap.Add(LoadTile(CHEMIN_SUPERIEUR_GAUCHE)); // CHEMIN_SUPERIEUR_GAUCHE
@@ -83,8 +116,23 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(BATIMENT_PORTE_BAS)); // BATIMENT_PORTE_BAS
             listeBitmap.Add(LoadTile(BATIMENT_MUR_DROIT)); // BATIMENT_MUR_DROIT
 
+            listeBitmap.Add(LoadTile(COLONNE_HAUT)); // COLONNE_HAUT
+            listeBitmap.Add(LoadTile(COLONNE_CENTRE)); // COLONNE_CENTRE
+            listeBitmap.Add(LoadTile(COLONNE_BAS)); // COLONNE_BAS
+
+            listeBitmap.Add(LoadTile(GRASS)); // GRASS
+
+            listeBitmap.Add(LoadTile(ENCLOS_SUPERIEUR_GAUCHE)); // ENCLOS_SUPERIEUR_GAUCHE
+            listeBitmap.Add(LoadTile(ENCLOS_SUPERIEUR)); // ENCLOS_SUPERIEUR
+            listeBitmap.Add(LoadTile(ENCLOS_SUPERIEUR_DROIT)); // ENCLOS_SUPERIEUR_DROIT
+            listeBitmap.Add(LoadTile(ENCLOS_DROIT)); // ENCLOS_DROIT
+            listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR_DROIT)); // ENCLOS_INFERIEUR_DROIT
+            listeBitmap.Add(LoadTile(ENNCLOS_INFERIEUR)); // ENNCLOS_INFERIEUR
+            listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR_GAUCHE)); // ENCLOS_INFERIEUR_GAUCHE
+            listeBitmap.Add(LoadTile(ENCLOS_GAUCHE)); // ENCLOS_GAUCHE
+            listeBitmap.Add(LoadTile(ENCLOS_CENTRE)); // ENCLOS_CENTRE
         }
-        
+
         private static Bitmap LoadTile(int posListe)
         {
             Image source = ZooTycoon.Properties.Resources.zoo_tileset;
