@@ -68,6 +68,7 @@
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
     <Compile Include="Animal.cs" />
+    <Compile Include="Deplacement.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Personnage.cs" />
     <Compile Include="Program.cs" />

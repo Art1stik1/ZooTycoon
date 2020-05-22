@@ -12,18 +12,8 @@ namespace ZooTycoon
 {
     public partial class Zoo : Form
     {
-        PictureBox hero;
-        public Zoo()
-        {
-
-
-            InitializeComponent();
-
-        }
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            int[,] array2D = new int[,] {{133,133,133,133,246,246,246,246,246,246,246,246,246,23,397,398,399,23,246,246,246,246,246,246,246,246,246,246,246,246},
+        #region Coords
+        private readonly int[,] TableauTuiles = new int[,] {{133,133,133,133,246,246,246,246,246,246,246,246,246,23,397,398,399,23,246,246,246,246,246,246,246,246,246,246,246,246},
 {163,163,163,163,246,246,246,246,246,246,246,246,246,53,427,428,429,53,246,246,246,246,246,246,246,246,246,246,246,246},
 {193,193,193,193,246,246,246,246,246,246,246,246,246,83,427,428,429,83,246,246,246,246,246,246,246,246,246,246,246,246},
 {223,224,225,226,397,398,398,398,398,398,398,398,398,398,428,428,428,398,398,398,398,398,398,398,398,398,398,398,398,398},
@@ -51,15 +41,28 @@ namespace ZooTycoon
 {246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246},
 {246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246},
 {246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246,246}};
+        #endregion
 
+        private readonly Hero Joueur;
 
+        public Zoo()
+        {
+            Joueur = new Hero();
+
+            InitializeComponent();
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
 
             for (int i = 0; i < 28; i++)
             {
 
                 for (int j = 0; j < 30; j++)
                 {
-                    switch (array2D.GetValue(i, j))
+                    switch (TableauTuiles.GetValue(i, j))
                     {
                         case 133:
                             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(TestTilesetZoo.TilesetImageGenerator.BATIMENT_TOIT_HAUT), (32 * (j)), 22 + (32 * i));
@@ -112,6 +115,12 @@ namespace ZooTycoon
                         case 458:
                             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(TestTilesetZoo.TilesetImageGenerator.CHEMIN_INFERRIEUR), (32 * (j)), 22 + (32 * i));
                             break;
+                        case 457:
+                            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(TestTilesetZoo.TilesetImageGenerator.CHEMIN_INFERIEUR_GAUCHE), (32 * (j)), 22 + (32 * i));
+                            break;
+                        case 459:
+                            g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(TestTilesetZoo.TilesetImageGenerator.CHEMIN_INFERIEUR_DROIT), (32 * (j)), 22 + (32 * i));
+                            break;
                         case 394:
                             g.DrawImage(TestTilesetZoo.TilesetImageGenerator.GetTile(TestTilesetZoo.TilesetImageGenerator.ENCLOS_SUPERIEUR_GAUCHE), (32 * (j)), 22 + (32 * i));
                             break;
@@ -158,41 +167,52 @@ namespace ZooTycoon
                 }
 
             }
-
-
         }
 
         private void Zoo_Load(object sender, EventArgs e)
         {
-
-            hero = new PictureBox
-            {
-                Image = ZooTycoon.Properties.Resources.Yoshi
-            };
-
-            hero.Location = new System.Drawing.Point((32 * (21)), 22 + (32 * 1));
-
-
-
-            this.Controls.Add(hero);
-            hero.BringToFront();
+            //Ajoute le Joueur au Form        
+            Joueur.ImagePersonnage.Location = new System.Drawing.Point((32 * Joueur.Col), 22 + (32 * Joueur.Row + 1));
+            this.Controls.Add(Joueur.ImagePersonnage);
+            Joueur.ImagePersonnage.BringToFront();
         }
 
+        /// <summary>
+        /// Deplace le Joueur selon la touche du clavier appuye
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">La touche</param>
         private void Zoo_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.W:
-                    hero.Top -= 32;
+                    if (Joueur.PeutAvancer(Joueur.Row - 1, Joueur.Col, TableauTuiles))
+                    {
+                        Joueur.ImagePersonnage.Top -= 32;
+                        Joueur.Row -= 1;
+                    }
                     break;
                 case Keys.A:
-                    hero.Left -= 32;
+                    if (Joueur.PeutAvancer(Joueur.Row, Joueur.Col - 1, TableauTuiles))
+                    {
+                        Joueur.ImagePersonnage.Left -= 32;
+                        Joueur.Col -= 1;
+                    }
                     break;
                 case Keys.S:
-                    hero.Top += 32;
+                    if (Joueur.PeutAvancer(Joueur.Row + 1, Joueur.Col, TableauTuiles))
+                    {
+                        Joueur.ImagePersonnage.Top += 32;
+                        Joueur.Row += 1;
+                    }
                     break;
                 case Keys.D:
-                    hero.Left += 32;
+                    if (Joueur.PeutAvancer(Joueur.Row, Joueur.Col + 1, TableauTuiles))
+                    {
+                        Joueur.ImagePersonnage.Left += 32;
+                        Joueur.Col += 1;
+                    }
                     break;
             }
         }

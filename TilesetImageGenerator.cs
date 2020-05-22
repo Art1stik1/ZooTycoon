@@ -53,6 +53,8 @@ namespace TestTilesetZoo
         public static int EAU = 30;
         public static int CHEMIN_PIERRE = 31;
 
+        public static int LION = 32;
+
         private static readonly List<TileCoord> listeCoord = new List<TileCoord>();
         private static readonly List<Bitmap> listeBitmap = new List<Bitmap>();
 
@@ -100,6 +102,8 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 6, Colonne = 0 }); // EAU
             listeCoord.Add(new TileCoord() { Ligne = 6, Colonne = 10 }); // CHEMIN_PIERRE
 
+            listeCoord.Add(new TileCoord() { Ligne = 17, Colonne = 0 }); // LION
+
 
             listeBitmap.Add(LoadTile(CHEMIN_SUPERIEUR_GAUCHE)); // CHEMIN_SUPERIEUR_GAUCHE
             listeBitmap.Add(LoadTile(CHEMIN_SUPERIEUR)); // CHEMIN_SUPERIEUR
@@ -138,6 +142,9 @@ namespace TestTilesetZoo
 
             listeBitmap.Add(LoadTile(EAU)); // EAU
             listeBitmap.Add(LoadTile(CHEMIN_PIERRE)); // CHEMIN_PIERRE
+
+            listeBitmap.Add(LoadTile(LION)); // LION
+
 
 
         }
