@@ -5,20 +5,20 @@ TP2
 --------------------------
 Système de tuiles
 --------------------------
-En cours par : Esteban
+Fait par : Esteban
 
 
 
 --------------------------
 Interfaces d'acceuil et principale
 --------------------------
-En cours par : Esteban
+Fait par : Esteban
 
 
 --------------------------
 Système de déaplacements
 --------------------------
-En cours par : Esteban
+Fait par : Esteban
 
 
 
