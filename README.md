@@ -25,14 +25,14 @@ En cours par : Esteban
 --------------------------
 Sprites des animaux
 --------------------------
-En cours par :
+En cours par : Daniil
 
 
 
 --------------------------
 Classes héro et concièrge
 --------------------------
-En cours par :
+En cours par : Daniil
 
 
 
@@ -46,4 +46,4 @@ En cours par :
 --------------------------
 User controls
 --------------------------
-En cours par :
+En cours par : Daniil 
