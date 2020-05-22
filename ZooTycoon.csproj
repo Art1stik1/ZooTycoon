@@ -123,5 +123,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dino.png" />
+    <Content Include="Resources\Mario.png" />
+    <None Include="Resources\Yoshi.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

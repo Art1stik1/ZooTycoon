@@ -50,9 +50,11 @@ namespace TestTilesetZoo
         public static int ENCLOS_GAUCHE = 28;
         public static int ENCLOS_CENTRE = 29;
 
+        public static int EAU = 30;
 
-        private static List<TileCoord> listeCoord = new List<TileCoord>();
-        private static List<Bitmap> listeBitmap = new List<Bitmap>();
+
+        private static readonly List<TileCoord> listeCoord = new List<TileCoord>();
+        private static readonly List<Bitmap> listeBitmap = new List<Bitmap>();
 
         /// <summary>
         /// Constructeur statique
@@ -95,6 +97,7 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 3 }); // ENCLOS_GAUCHE
             listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // ENCLOS_CENTRE
 
+            listeCoord.Add(new TileCoord() { Ligne = 6, Colonne = 0 }); // EAU
 
 
             listeBitmap.Add(LoadTile(CHEMIN_SUPERIEUR_GAUCHE)); // CHEMIN_SUPERIEUR_GAUCHE
@@ -131,6 +134,9 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR_GAUCHE)); // ENCLOS_INFERIEUR_GAUCHE
             listeBitmap.Add(LoadTile(ENCLOS_GAUCHE)); // ENCLOS_GAUCHE
             listeBitmap.Add(LoadTile(ENCLOS_CENTRE)); // ENCLOS_CENTRE
+
+            listeBitmap.Add(LoadTile(EAU)); // EAU
+
         }
 
         private static Bitmap LoadTile(int posListe)
