@@ -45,13 +45,13 @@ namespace TestTilesetZoo
         public static int ENCLOS_SUPERIEUR_DROIT = 23;
         public static int ENCLOS_DROIT = 24;
         public static int ENCLOS_INFERIEUR_DROIT = 25;
-        public static int ENNCLOS_INFERIEUR = 26;
+        public static int ENCLOS_INFERIEUR = 26;
         public static int ENCLOS_INFERIEUR_GAUCHE = 27;
         public static int ENCLOS_GAUCHE = 28;
         public static int ENCLOS_CENTRE = 29;
 
         public static int EAU = 30;
-
+        public static int CHEMIN_PIERRE = 31;
 
         private static readonly List<TileCoord> listeCoord = new List<TileCoord>();
         private static readonly List<Bitmap> listeBitmap = new List<Bitmap>();
@@ -98,6 +98,7 @@ namespace TestTilesetZoo
             listeCoord.Add(new TileCoord() { Ligne = 14, Colonne = 4 }); // ENCLOS_CENTRE
 
             listeCoord.Add(new TileCoord() { Ligne = 6, Colonne = 0 }); // EAU
+            listeCoord.Add(new TileCoord() { Ligne = 6, Colonne = 10 }); // CHEMIN_PIERRE
 
 
             listeBitmap.Add(LoadTile(CHEMIN_SUPERIEUR_GAUCHE)); // CHEMIN_SUPERIEUR_GAUCHE
@@ -130,12 +131,14 @@ namespace TestTilesetZoo
             listeBitmap.Add(LoadTile(ENCLOS_SUPERIEUR_DROIT)); // ENCLOS_SUPERIEUR_DROIT
             listeBitmap.Add(LoadTile(ENCLOS_DROIT)); // ENCLOS_DROIT
             listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR_DROIT)); // ENCLOS_INFERIEUR_DROIT
-            listeBitmap.Add(LoadTile(ENNCLOS_INFERIEUR)); // ENNCLOS_INFERIEUR
+            listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR)); // ENNCLOS_INFERIEUR
             listeBitmap.Add(LoadTile(ENCLOS_INFERIEUR_GAUCHE)); // ENCLOS_INFERIEUR_GAUCHE
             listeBitmap.Add(LoadTile(ENCLOS_GAUCHE)); // ENCLOS_GAUCHE
             listeBitmap.Add(LoadTile(ENCLOS_CENTRE)); // ENCLOS_CENTRE
 
             listeBitmap.Add(LoadTile(EAU)); // EAU
+            listeBitmap.Add(LoadTile(CHEMIN_PIERRE)); // CHEMIN_PIERRE
+
 
         }
 
