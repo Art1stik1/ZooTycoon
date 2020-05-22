@@ -24,9 +24,9 @@ namespace ZooTycoon
         {
             int idTuile = -1;
 
-            if (Row <= 30 && Row >= 0)
+            if (Row < 26 && Row >= 0)
             {
-                if (Col <= 28 && Col >= 0)
+                if (Col < 30 && Col >= 0)
                 {
                     idTuile = coordMap[Row, Col];
                 }
